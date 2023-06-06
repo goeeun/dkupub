@@ -1,0 +1,140 @@
+{% load static %}
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        
+        .btn-main-color {
+            background: #   ;
+            color: #fff;
+        }
+
+        .btn-main-color:hover {
+            background: #007aff;
+            color: #fff;
+        }
+
+        .board-name {
+            padding: 0;
+        }
+
+        .board-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .board {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            background-color: #fff;
+            margin-bottom: 25px;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .board-header {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .board-title {
+            font-weight: bold;
+            font-size: 25px;
+            width: 80%;
+        }
+
+        .board-write_dttm {
+            width: 20%;
+            text-align: right;
+        }
+
+        .board-contents {
+            display: flex;
+            font-size: 20px;
+        }
+
+        .board-profile {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #ddd;
+            padding: 30px 0;
+        }
+
+        .board-profile-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            border: 1px solid #ddd;
+        }
+
+        .board-content {
+            width: 80%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <h1>게시판 상세</h1>
+            </div>
+        </div>
+
+        <div class="row board-detail">
+            <div class="col-12 board-name">
+                <h5>
+                    {% if board.board_name == 'information' %}
+                    정보게시판
+                    {% elif board.board_name == 'meeting' %}
+                    모임게시판
+                    {% elif board.board_name == 'chat' %}
+                    잡담게시판
+                    {% endif %}
+                </h5>
+            </div>
+            <div class="board">
+                <div class="board-header">
+                    <span class="board-title">{{ board.title }}</span>
+                    <span class="board-write_dttm">{{ board.write_dttm|date:'Y-m-d H:i' }} | 조회수 : {{board.hits}}</span>
+                </div>
+                <div class="board-contents">
+                    <div class="board-profile">
+                        <div class="board-profile-image">
+                            {% if board.writer.user_profile %}
+                            <img src="{{ board.writer.user_profile }}" />
+                            {% else %}
+                            <img src="{% static 'img/profile/default.png' %}" />
+                            {% endif %}
+                        </div>
+                        <div class="board-writer">
+                            {{ board.writer }}
+                        </div>
+                    </div>
+                    <div class="board-content">{{ board.contents|safe }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12" style="text-align: right;">
+                {% if login_session and board.writer.user_id == login_session %}
+                <a href="/board/detail/{{board.id}}/modify/" class="btn btn-main-color">수정</a>
+                <a href="/board/detail/{{board.id}}/delete/" class="btn btn-main-color">삭제</a>
+                {% endif %}
+                <a href="/board/" class="btn btn-main-color">목록</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

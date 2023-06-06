@@ -1,0 +1,33 @@
+footer__ {
+    border-width: 3px 0px 0px 0px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-weight: 700;
+  }
+  
+  .footer-contents {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+  }
+  
+  .footer-content {
+    text-align: center;
+    margin: 7px 60px;
+    font-size: x-small;
+  }
+  
+  .footer-contents-1 {
+    margin-top: 40px;
+  }
+  
+  .footer-content-3 {
+    margin-top: 40px;
+    display: flex;
+  }
+  
+  .footer-content-info {
+    margin-right: 40px;
+  }

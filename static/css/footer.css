@@ -1,0 +1,34 @@
+footer__ {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-weight: 700;
+}
+
+.footer-contents {
+  border: 1px solid #03468f;
+  border-width: 3px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  max-width: 198vh;
+}
+
+.footer-content {
+  text-align: center;
+  margin: 7px 60px;
+  font-size: x-small;
+}
+
+.footer-contents-1 {
+  margin-top: 40px;
+}
+
+.footer-content-3 {
+  margin-top: 40px;
+  display: flex;
+}
+
+.footer-content-info {
+  margin-right: 40px;
+}

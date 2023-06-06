@@ -1,0 +1,212 @@
+
+.footer-contents {
+  margin-top: 80px;
+  margin-left: -24%;
+  margin-right: -24%;
+  border: 1px solid #29c05e;
+  border-width: 3px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.footer-content {
+  text-align: center;
+  margin: 7px 60px;
+  font-size: x-small;
+}
+
+.footer-contents-1 {
+  margin-top: 40px;
+}
+
+.footer-content-3 {
+  margin-top: 40px;
+  display: flex;
+}
+
+.footer-content-info {
+  margin-right: 40px;
+}
+
+/* 테블릿 세로 사이즈 넘어가면 적용 */
+@media screen and (min-width: 768px) {
+}
+
+/* 테블릿 가로 사이즈 넘어가면 적용 */
+@media screen and (min-width: 1024px) {
+}
+
+/* 스마트폰 가로 사이즈 넘어가면 적용 */
+@media screen and (min-width: 480px) {
+}
+
+/* 스마트폰 세로 사이즈 넘어가면 적용 */
+@media screen and (min-width: 320px) {
+}
+
+/* .alcohol-list-div {
+  display: block;
+} */
+
+body {
+  font-family: NanumSquareRound;
+}
+
+
+.alclist-category-div {
+  font-family: NanumSquareRound;
+  display: flex;
+  position: static;
+  align-items: baseline;
+  justify-content: space-around;
+  width: 1280px;
+  margin-top: 90px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.category-sort-div {
+  display: flex;
+  align-items: baseline;
+  /* margin-right: 80px; */
+}
+
+.category-font {
+  margin: 0px 15px;
+  padding: 4px 6px;
+  font-weight: 700;
+  background-color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.act {
+  margin: 0px 15px;
+  padding: 4px 6px;
+  font-weight: 700;
+  background-color: #29c05e;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 16px;
+}
+
+.filter {
+  display: flex;
+  align-items: baseline;
+  /* margin-left: 60px; */
+}
+
+.filter-font {
+  margin: 0px 15px;
+  padding: 4px 6px;
+  font-weight: 700;
+  background-color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.filterAct {
+  margin: 0px 15px;
+  padding: 4px 6px;
+  font-weight: 700;
+  background-color: #29c05e;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 16px;
+}
+
+.alclist-item-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1280px;
+  height: 679px;
+}
+
+/* .alc-link {
+  width: 150px;
+} */
+
+.d-flex {
+  display: flex;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  width: 180px;
+  height: 300px;
+  margin: 20px;
+  position: static;
+  border-radius: 20px;
+}
+
+.card-body {
+  font-size: 20px;
+  font-weight: bold;
+  /* padding: 0; */
+  /* padding-left: 80px; */
+}
+
+.card-img-top {
+  padding-top: 5px;
+  /* object-fit: cover;
+  object-position: center;
+  overflow: hidden; */
+  /* width: 50%; */
+  /* height: 200px; */
+  /* margin-left: 52.5px; */
+}
+
+.page-btn-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.alchol-degree-value {
+  margin-top: 10px;
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+}
+
+.pagination-ul {
+  text-align: center;
+  display: inline-block;
+}
+
+.pagination-ul li {
+  text-align: center;
+  float: left;
+}
+
+.pagination-ul li a {
+  display: block;
+  font-size: 14px;
+  padding: 9px 12px;
+  box-sizing: border-box;
+}
+
+.pagination-ul li.on {
+  background: #29c05e;
+  border-radius: 5px;
+}
+
+.pagination-ul li.on a {
+  color: #fff;
+}

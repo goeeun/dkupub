@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+content {
+  font-family: NanumSquareRound;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 28px;
+  padding-top: 300px;
+}
+
+.search-bar {
+  width: 45vw;
+  margin-left: 20px;
+  font-family: NanumSquareRound;
+}
+
+.form-control {
+  border-radius: 0.7em;
+  border: 1px solid #a7a7a7;
+}
+
+.search-bar-btn {
+  border-radius: 0.7em;
+}
+
+.li-non {
+  padding-left: 15px;
+}
+
+.main-icons {
+  margin-left: 35px;
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  /* footer 설정 */
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 68px;
+}
+
+.main-icon {
+  flex-direction: column;
+}
+
+.main-icon i:hover {
+  color: #29c05e;
+}
+
+.main-icons i {
+  margin: 0px 35px;
+  font-size: 45px;
+  color: rgb(63, 63, 63);
+}
+
+.main-icons-font {
+  text-align: center;
+  font-weight: 700;
+  margin: 10px 0px;
+  padding: 0;
+}

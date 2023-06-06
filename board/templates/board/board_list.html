@@ -1,0 +1,271 @@
+{% load static %}
+
+
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        .btn-main-color {
+            background: #03468f;
+            color: #fff;
+        }
+
+        .btn-main-color:hover {
+            background: #007aff;
+            color: #fff;
+        }
+
+        .board-name {
+            padding: 0;
+        }
+
+        .board-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .board {
+            width: 48%;
+            border: 1px solid #ddd;
+            height: 150px;
+            border-radius: 10px;
+            background-color: #e9e9e9;
+            margin-bottom: 25px;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .board-header {
+            border-bottom: 1px solid #ddd;
+            padding: 5px 7px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 25%;
+        }
+
+        .board-title {
+            width: 80%;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .board-write_dttm {
+            width: 20%;
+            text-align: right;
+        }
+
+        .board-contents {
+            display: flex;
+            height: 75%;
+        }
+
+        .board-profile {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .board-profile-image img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            border: 1px solid #ddd;
+        }
+
+        .board-content {
+            width: 80%;
+            padding: 10px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            word-break: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+        .container1 {
+            display: flex;
+            align-items: center;
+        }
+
+        .vertical-image {
+            width: 100px; /* 이미지의 너비 조정 */
+            height: auto; /* 이미지의 높이를 자동으로 설정 */
+            margin-right: 20px; /* 이미지와 내용 사이의 간격 설정 */
+            margin-left: 50px;
+        }
+    </style>
+    <link rel = "stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
+    <title>DKUPUB</title>
+</head>
+<body onload="allList()">
+
+    <nav class="navbar__">
+        <div><!-- 공간, 삭제하지 마세요 --></div>
+
+
+        <div class="navbar__logo">
+            <a href="{% url 'home:home' %}">
+                    <img src="/static/img/logo.jpg" alt="" style="width: 190px; height: 80px;">
+            </a>
+        </div>
+
+        </div>
+
+       
+
+        <ul class="navbar__login">
+            <!-- 알림 -->
+            <div class="btn-group">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 마이페이지 -->
+            <a href=""><login-i class="fa-solid fa-user-large"></login-i></a>
+
+            <!-- 검색 -->
+            <div class="btn-group">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></a>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                      <li>
+                        <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 단국대 지도 -->
+            <a href="http://map.naver.com/v5/entry/place/11591526"><login-i class="fa-solid fa-map-location-dot"></login-i></a>
+        </ul>
+    </nav>
+
+</head>
+<body>
+    <div> </div>
+    <div class="container1">
+        <div class="row mt-5">
+          <div class="col-12 text-center">
+            <a href="https://www.coupang.com/np/search?component=&q=%EC%86%8C%EC%A3%BC&channel=user">
+                <img src="/static/img/soju.png" alt="" style="width: 190px; height: 700px; margin-left: 0px; margin-top: 50px;">
+            </a>
+          </div>
+        </div>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <img src="/static/img/board.png" alt="" style="width: 300px; height: 80px; margin-left: -150px;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-2" style="text-align: right;">
+                <a href="{% url 'home:home' %}" class="btn btn-main-color mt-4 ">홈으로</a>
+                <a href="{% url 'board:board_write' %}" class="btn btn-main-color mt-4">글쓰기</a>
+            </div>
+        </div>
+
+
+        {% if information_boards %} 
+        <div class="row board-list">
+            <div class="col-12 board-name">
+                <h5>정보게시판</h5>
+            </div>
+            {% for board in information_boards %}
+            <div class="board" onclick="javascript:location.href='/board/detail/{{board.id}}'">
+                <div class="board-header">
+                    <span class="board-title">{{ board.title }}</span>
+                    <span class="board-write_dttm">{{ board.write_dttm|date:'Y-m-d' }}</span>
+                </div>
+                <div class="board-contents">
+                    <div class="board-profile">
+                        <div class="board-profile-image">
+                            {% if board.writer.user_profile %}
+                            <img src="{{ board.writer.user_profile }}" />
+                            {% else %}
+                            <img src="{% static 'img/dog.jpg' %}" />
+                            {% endif %}
+                        </div>
+                        <div class="board-writer">
+                            {{ board.writer }}
+                        </div>
+                    </div>
+                    <div class="board-content">{{ board.contents|safe }}</div>
+                </div>
+            </div>
+            {% endfor %} 
+        </div>
+        {% endif %}
+
+        {% if meeting_boards %} 
+        <div class="row board-list mt-5">
+            <div class="col-12 board-name">
+                <h5>모임게시판</h5>
+            </div>
+            {% for board in meeting_boards %}
+            <div class="board" onclick="javascript:location.href='/board/detail/{{board.id}}'">
+                <div class="board-header">
+                    <span class="board-title">{{ board.title }}</span>
+                    <span class="board-write_dttm">{{ board.write_dttm|date:'Y-m-d' }}</span>
+                </div>
+                <div class="board-contents">
+                    <div class="board-profile">
+                        <div class="board-profile-image">
+                            <img src="{% static 'img/profile/default.png' %}" />
+                        </div>
+                        <div class="board-writer">
+                            {{ board.writer }}
+                        </div>
+                    </div>
+                    <div class="board-content">{{ board.contents|safe }}</div>
+                </div>
+            </div>
+            {% endfor %} 
+        </div>
+        {% endif %}
+
+        {% if chat_boards %} 
+        <div class="row board-list mt-5">
+            <div class="col-12 board-name">
+                <h5>잡담게시판</h5>
+            </div>
+            {% for board in chat_boards %}
+            <div class="board" onclick="javascript:location.href='/board/detail/{{board.id}}'">
+                <div class="board-header">
+                    <span class="board-title">{{ board.title }}</span>
+                    <span class="board-write_dttm">{{ board.write_dttm|date:'Y-m-d' }}</span>
+                </div>
+                <div class="board-contents">
+                    <div class="board-profile">
+                        <div class="board-profile-image">
+                            <img src="{% static 'img/alcohol/진로.png' %}" />
+                        </div>
+                        <div class="board-writer">
+                            {{ board.writer }}
+                        </div>
+                    </div>
+                    <div class="board-content">{{ board.contents|safe }}</div>
+                </div>
+            </div>
+            {% endfor %} 
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

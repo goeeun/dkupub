@@ -1,0 +1,52 @@
+/* bar.css */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .col-md-4 {
+    flex: 0 0 calc(20% - 20px);
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 70, 143, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .col-md-4:hover .overlay {
+    opacity: 1;
+  }
+  
+  .overlay-text {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .drink-details {
+    color: #fff;
+    text-align: center;
+  }
+  
+  .drink-info {
+    margin-bottom: 5px;
+    color : #000;
+  }

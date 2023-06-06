@@ -1,0 +1,57 @@
+<html>
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        .btn-main-color {
+            background: #03468f;
+            color: #fff;
+        }
+
+        .btn-main-color:hover {
+            background: #007aff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <h1>게시판 작성</h1>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-2" style="text-align: right;">
+                        <button type="button" class="btn btn-main-color mt-4" onclick="javascript:history.back();">나가기</button>
+                        <button type="submit" class="btn btn-main-color mt-4">저장</button>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="게시글 제목" name="title" />
+                    </div>
+
+                    <div class="mb-3">
+                        <select name="board_name" class="form-select">
+                            <option value="information">정보게시판</option>
+                            <option value="meeting">모임게시판</option>
+                            <option value="chat">잡담게시판</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea class="form-control" name="contents" placeholder="게시글 내용" rows="5"></textarea>
+                    </div>
+
+                    {% if error %} 
+                    {{ error }} 
+                    {% endif %} 
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

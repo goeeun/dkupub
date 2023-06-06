@@ -1,0 +1,39 @@
+/* @charset "UTF-8";
+@import "reset.css";
+
+* {
+  font-family: NanumSquareRound;
+}
+
+body {
+  align-items: center;
+  min-height: 100%;
+  padding-bottom: 68px;
+  max-width: 1280px;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0;
+}  */
+
+
+@charset "UTF-8";
+@import "reset.css";
+
+* {
+  font-family: NanumSquareRound;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  min-height: 100%;
+  padding-bottom: 68px;
+  max-width: 1280px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 0;
+  justify-content: center;
+}

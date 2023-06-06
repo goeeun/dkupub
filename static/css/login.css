@@ -1,0 +1,58 @@
+/* Center the login form on the page */
+.login-box {
+	width: 360px;
+	margin: auto;
+	margin-top: 50px;
+	border: 1px solid #ccc;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px #ccc;
+  }
+  
+  /* Style the form heading */
+  .login-box h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 32px;
+	color: #03468f;
+  }
+  
+  /* Style the form fields and labels */
+  .login-box div {
+	margin-bottom: 20px;
+  }
+  
+  .login-box label {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 16px;
+	color: #03468f;
+  }
+  
+  .login-box input[type="text"],
+  .login-box input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+	color: #03468f;
+  }
+  
+  /* Style the submit button */
+  .login-box button[type="submit"] {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #03468f;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 18px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+  }
+  
+  .login-box button[type="submit"]:hover {
+	background-color: #555;
+  }
+  

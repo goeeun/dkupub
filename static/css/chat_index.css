@@ -1,0 +1,53 @@
+body {
+    background-color: #fff;
+    color: #03468f;
+    font-family: Arial, sans-serif;
+}
+.container {
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+text-align: center;
+}
+
+.navbar__logo {
+margin-bottom: 20px;
+}
+
+.form-container {
+margin-bottom: 40px;
+}
+
+.form-container label {
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+.form-container input[type="text"] {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+border-radius: 5px;
+border: none;
+margin-bottom: 10px;
+}
+
+.form-container input[type="button"] {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+border-radius: 5px;
+border: none;
+background-color: #03468f;
+color: #fff;
+cursor: pointer;
+}
+
+.image-container {
+margin-top: 50px;
+}
+
+.image-container img {
+width: 850px;
+height: 150px;
+}

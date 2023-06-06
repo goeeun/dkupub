@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+select {
+  position: relative;
+  top: 155px;
+  width: 350px;
+  left: 0px;
+  height: 35px;
+}
+
+.save {
+ text-align: center;
+ display: flex;
+ position: relative;
+ width: 75px;
+ height: 27px;
+ left: 837px;
+ top: 120px;
+ line-height: 20px;
+ /* background: #90D483; */
+ background: #29c05e;
+ font-weight: 600;
+ font-size: 19px;
+ color: #FFFFFF;
+ border-radius: 10px;
+}
+
+.quit {
+ display: flex;
+ position: relative;
+ width: 75px;
+ height: 27px;
+ left: 927px;
+ top: 93px;
+ line-height: 20px;
+ /* background: #90D483; */
+ background: #29c05e;
+ font-weight: 600;
+ font-size: 19px;
+ color: #FFFFFF;
+ border-radius: 10px;
+ text-align: center;
+}
+
+.write-title {
+  position: relative;
+  top: 115px;
+  width: 1000px;
+  left: 0px;
+  height: 45px;
+}
+
+
+.smart-editor {
+  position: relative;
+  top: 140px;
+}
